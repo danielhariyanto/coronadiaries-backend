@@ -5,6 +5,11 @@ const diarySchema = new Schema({
     _id: String,
     title:  String, // String is shorthand for {type: String}
     content: String,
+    completed: {
+        type: Boolean,
+        default: false
+    },
+    fileUri: String,
     userId: String,
     score:   Number,
     attachment: String,
