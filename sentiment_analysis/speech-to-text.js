@@ -4,7 +4,7 @@ AWS.config.update({region:'us-east-1'});
 var transcribeservice = new AWS.TranscribeService({apiVersion: '2017-10-26'});
 
 var params = {
-    "TranscriptionJobName": "Test4",
+    "TranscriptionJobName": "Test5",
     "LanguageCode": "en-US",
     "MediaSampleRateHertz": 44100,
     "MediaFormat": "mp3",

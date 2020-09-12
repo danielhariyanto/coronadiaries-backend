@@ -22,6 +22,8 @@ const diarySchema = new Schema({
         },
         Sentiment: String
     }
+},
+    { timestamps: true
 });
 
 export default mongoose.model('Diary', diarySchema);

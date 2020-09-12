@@ -8,7 +8,7 @@ export const main = handler(async (event, context) => {
 
   });
 
-  return await Diary.find({userId: event.requestContext.identity.cognitoIdentityId}).then((diary) => {
+  return await Diary.find({userId: event.requestContext.identity.cognitoIdentityId}).sort({timestamps: -1}).limit(5).then((diary) => {
     mongoose.disconnect();
     return diary;
   });

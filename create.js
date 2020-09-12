@@ -78,7 +78,8 @@ export const main = handler(async (event, context) => {
                     Diary.findByIdAndUpdate(diaryId, {
                         completed: true,
                         fileUri: file,
-                        content: comprehendParams.Text
+                        content: comprehendParams.Text,
+                        sentiment: data,
                     }).then(updatedDiary => {
                         console.log(updatedDiary);
                         console.log("Bye!");
