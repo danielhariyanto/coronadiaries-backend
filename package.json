@@ -19,6 +19,7 @@
     "serverless-offline": "^5.3.3"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "mongodb": "^3.6.2",
     "mongoose": "^5.10.5",
     "saslprep": "^1.0.3",

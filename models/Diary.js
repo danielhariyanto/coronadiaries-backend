@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const diarySchema = new Schema({
+    _id: String,
     title:  String, // String is shorthand for {type: String}
     content: String,
     userId: String,
