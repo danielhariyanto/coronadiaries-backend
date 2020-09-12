@@ -19,6 +19,9 @@
     "serverless-offline": "^5.3.3"
   },
   "dependencies": {
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.5",
+    "saslprep": "^1.0.3",
     "uuid": "^7.0.3"
   }
 }

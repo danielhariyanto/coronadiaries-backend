@@ -1,19 +1,16 @@
 import handler from "./libs/handler-lib";
-import dynamoDb from "./libs/dynamodb-lib";
+// import dynamoDb from "./libs/dynamodb-lib";
+import client from "./libs/mongodb-lib";
+import Diary from "./models/Diary";
+import mongoose from "mongoose";
 
 export const main = handler(async (event, context) => {
-  const params = {
-    TableName: process.env.tableName,
-    // 'Key' defines the partition key and sort key of the item to be removed
-    // - 'userId': Identity Pool identity id of the authenticated user
-    // - 'diaryId': path parameter
-    Key: {
-      userId: event.requestContext.identity.cognitoIdentityId,
-      diaryId: event.pathParameters.id
-    }
-  };
+  client(() => {
 
-  await dynamoDb.delete(params);
+  });
 
-  return { status: true };
+  await Diary.findByIdAndDelete(event.pathParameters.id).then((deletedDiary) => {
+    mongoose.disconnect();
+    return deletedDiary;
+  });
 });
