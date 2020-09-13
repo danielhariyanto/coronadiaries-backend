@@ -9,6 +9,7 @@ const diarySchema = new Schema({
         type: Boolean,
         default: false
     },
+    fileName: String,
     fileUri: String,
     userId: String,
     score:   Number,

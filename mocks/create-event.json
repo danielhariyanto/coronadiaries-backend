@@ -1,8 +1,8 @@
 {
-  "body": "{\"content\":\"this will work\",\"attachment\":\"hello.jpg\", \"userId\": \"USER-SUB-1234\"}",
+  "body": "{\"title\":\"mock test\",\"fileName\":\"500000-babyShark.mp3\"}",
   "requestContext": {
     "identity": {
-      "cognitoIdentityId": "USER-SUB-1234"
+      "cognitoIdentityId": "us-east-1:11890532-42cf-457a-addb-1283f772026b"
     }
   }
 }
