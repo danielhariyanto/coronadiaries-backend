@@ -39,8 +39,14 @@ export const main = handler(async (event, context) => {
     console.log("Transcribing: " + data.fileName);
 
     transcribeservice.startTranscriptionJob(params, function(err, data) {
-        if (err) console.log(err, err.stack); // an error occurred
-        else console.log("Transcription worked!");           // successful response
+        console.log("Starting Transcription job!");
+        if (err) {
+           console.log(err);
+           console.log("transcription failed");
+        } else {
+            console.log(data);
+            console.log("transcription worked!");
+        }
     });
 
     let transcriptFileUri = "";
@@ -65,6 +71,8 @@ export const main = handler(async (event, context) => {
             });
         }, 10000);
     }
+
+    console.log("Gonna do the sentiment job now");
 
     waitForJob(async (file) => {
         console.log("File was " + file);
