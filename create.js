@@ -49,11 +49,11 @@ export const main = handler(async (event, context) => {
         let checkJobStatus = setInterval(() => {
             transcribeservice.getTranscriptionJob({TranscriptionJobName: diaryId}, function(err, data) {
                 if (err) {
-                    console.log("Error")
+                    console.log("Error");
                     console.log(err, err.stack);
                 } else {
                     console.log("Job Status:");
-                    const {TranscriptionJobStatus } = data.TranscriptionJob;
+                    const {TranscriptionJobStatus} = data.TranscriptionJob;
                     console.log(TranscriptionJobStatus);
                     if(TranscriptionJobStatus == 'COMPLETED') {
                         console.log("Found the file!");
